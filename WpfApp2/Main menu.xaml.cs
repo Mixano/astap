@@ -48,5 +48,10 @@ namespace WpfApp2
         {
 
         }
+
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -5,21 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="259.333" Width="484.333">
-    <Grid>
-        <ListBox x:Name="listStudents" HorizontalAlignment="Left" Height="210" Margin="10,10,0,0" VerticalAlignment="Top" Width="222"/>
-        <TextBlock HorizontalAlignment="Left" Margin="252,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Название"/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="252,55,0,0" TextWrapping="Wrap" Text="Возраст" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="252,84,0,0" TextWrapping="Wrap" Text="Издательство" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="348,25,0,0" TextWrapping="Wrap" Text="{Binding Path=book_Name}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="348,55,0,0" TextWrapping="Wrap" Text="{Binding Path=Age_izdania}" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="348,84,0,0" TextWrapping="Wrap" Text="{Binding Path=izdatelstvo}" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="252,198,0,0" VerticalAlignment="Top" Width="58" Click="Button_Click_1"/>
-        <Button Content="Проверить" HorizontalAlignment="Left" Margin="252,171,0,0" VerticalAlignment="Top" Width="216" Click="Button_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="252,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Height="20"><Run Text="Адрес изд"/><LineBreak/><Run/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="348,115,0,0" TextWrapping="Wrap" Text="{Binding Address_izdania}" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="252,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Height="20" Text="Автор"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="348,143,0,0" TextWrapping="Wrap" Text="{Binding avtor}" VerticalAlignment="Top" Width="120"/>
+        Title="jurnal of otsenok" Height="302.666" Width="573.666">
+    <Grid >
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center"   VerticalAlignment="Center" Height="20" Margin="56,34,54.5,37" ><Run Text="Класс"/><LineBreak/><Run/></TextBlock>
+        <ComboBox Grid.Column="1" Grid.Row="0" x:Name="comboBox" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="120" />
+        <DataGrid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Margin="10, 10, 10, 10" x:Name="dataGrid"  AreRowDetailsFrozen="True" SelectionChanged="dataGrid_SelectionChanged" FrozenColumnCount="5"  VerticalAlignment="Top">
+            <DataGrid.HorizontalGridLinesBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.HorizontalGridLinesBrush>
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Предмет" Width="2*"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Год. оценка" CanUserResize="False" Width="*"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Экз. оценка" Width="*" CanUserResize="False"/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Итоговая оценка" CanUserResize="False" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="button" Content="Главное меню" Grid.Column="2" HorizontalAlignment="Left" Height="29" Margin="10,28,0,0" VerticalAlignment="Top" Width="86"/>
 
     </Grid>
 </Window>

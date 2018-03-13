@@ -55,7 +55,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Faculty.cs" />
+    <Compile Include="Main menu.xaml.cs">
+      <DependentUpon>Main menu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Student.cs" />
+    <Page Include="Main menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
